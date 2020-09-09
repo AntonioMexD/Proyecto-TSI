@@ -1,8 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Provider} from "react-redux"
+import AppRoutes from './AppRoutes';
+import { createStore, applyMiddleware } from 'redux'; 
+//import store from "./Redux/Store"
 
-function App() {
+//const store = createStore(reducer)
+
+const store = createStore (() => [], {}, applyMiddleware ());
+
+const App = () => (
+  <Provider store={store}>
+    <AppRoutes/>
+  </Provider>
+)
+
+
+//import logo from './logo.svg';
+//import './App.css';
+
+/*function App() {
   return (
     <div className="App">
       <header className="App-header">
@@ -21,6 +37,7 @@ function App() {
       </header>
     </div>
   );
-}
+}*/
+
 
 export default App;
